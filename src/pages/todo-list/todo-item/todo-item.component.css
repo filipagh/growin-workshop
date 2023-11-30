@@ -1,0 +1,45 @@
+.todo-item {
+  width: 100%;
+  max-width: 800px; /* You may adjust this value to fit your needs */
+  margin: 10px auto; /* Margins for setting the card in vertical center*/
+  padding: 20px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+.todo-item p {
+  margin-bottom: 0.5em;
+}
+
+.todo-item button {
+  margin-right: 10px;
+}
+
+.todo-item hr {
+  margin-top: 20px;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.mat-button-toggle-group {
+  display: flex;
+  justify-content: flex-end; /* Aligns buttons to the right */
+  margin-top: 10px;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+}
+
+.mat-button-toggle-group button {
+  border-right: 1px solid black; /* Only right border */
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+}

@@ -1,18 +1,24 @@
-<button (click)="up()">↑</button>
-<button (click)="down()">↓</button>
-<h1>{{todo.name}} : {{todo.id}}</h1>
-<p>{{todo.description}}</p>
-<p>{{TodoItemStateEnum[todo.state]}}</p>
-<mat-button-toggle-group [(value)]="todo.state" #group="matButtonToggleGroup">
-  <mat-button-toggle value="{{stateEnum.CREATED}}" aria-label="Created">
-    {{stateEnum.CREATED}}
-  </mat-button-toggle>
-  <mat-button-toggle value="{{stateEnum.IN_PROGRESS}}" aria-label="Text align center">
-    {{stateEnum.IN_PROGRESS}}
-  </mat-button-toggle>
-  <mat-button-toggle value="{{stateEnum.DONE}}" aria-label="Text align right">
-    {{stateEnum.DONE}}
-  </mat-button-toggle>
-</mat-button-toggle-group>
+<div class="todo-item">
 
-<hr>
+  <button (click)="up()">
+    <fa-icon [icon]="faAngleUp"></fa-icon>
+  </button>
+  <button (click)="down()">
+    <fa-icon [icon]="faAngleDown"></fa-icon>
+  </button>
+
+  <h1>{{todo.name}} : {{todo.id}}</h1>
+  <p>{{todo.description}}</p>
+  <mat-button-toggle-group [(value)]="todo.state" #group="matButtonToggleGroup">
+    <mat-button-toggle value="{{stateEnum.CREATED}}" aria-label="Created">
+      {{stateEnum.CREATED}}
+    </mat-button-toggle>
+    <mat-button-toggle value="{{stateEnum.IN_PROGRESS}}" aria-label="Text align center">
+      {{stateEnum.IN_PROGRESS}}
+    </mat-button-toggle>
+    <mat-button-toggle value="{{stateEnum.DONE}}" aria-label="Text align right">
+      {{stateEnum.DONE}}
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+
+</div>

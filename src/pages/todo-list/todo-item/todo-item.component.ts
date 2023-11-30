@@ -5,16 +5,21 @@ import TodoItemStateEnum from "../../../types/TodoItemStateEnum";
 import {TodosService} from "../../../services/todos.service";
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatIconModule} from "@angular/material/icon";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+// Import your icons
 
 
 @Component({
   selector: 'app-todo-item',
   standalone: true,
-  imports: [CommonModule, MatButtonToggleModule, MatIconModule],
+  imports: [CommonModule, MatButtonToggleModule, MatIconModule,FontAwesomeModule],
   templateUrl: './todo-item.component.html',
   styleUrl: './todo-item.component.css'
 })
 export class TodoItemComponent {
+  faAngleUp = faAngleUp;
+  faAngleDown = faAngleDown;
   stateEnum = TodoItemStateEnum;
   @Input({required: true}) todo!: TodoItem;
 
