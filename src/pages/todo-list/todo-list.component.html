@@ -1,0 +1,9 @@
+<app-todo-item-input></app-todo-item-input>
+<br>
+<hr>
+<ul class="todo_list">
+  <li *ngFor="let todo of todoItems">
+    <app-todo-item [todo]="todo"></app-todo-item>
+  </li>
+
+</ul>
