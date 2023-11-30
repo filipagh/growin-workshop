@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {AuthServiceService} from "../../services/auth-service.service";
+import {filter} from "rxjs";
 
-let notLoggedIn = "Not logged in";
+let notLoggedInText = "Not logged in";
 
 @Component({
   selector: 'app-header',
@@ -12,12 +13,12 @@ let notLoggedIn = "Not logged in";
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  loggedInText: string = notLoggedIn;
+  loggedInText: string = notLoggedInText;
 
   constructor(authService: AuthServiceService) {
-    authService.loggedIn$.subscribe((isLoggedIn) => {
+    authService.loggedIn$.pipe(filter((isLoggedIn) => isLoggedIn)).subscribe((isLoggedIn) => {
 
-      this.loggedInText = isLoggedIn ? `Logged in as ${authService.username}` : notLoggedIn;
+      this.loggedInText = isLoggedIn ? `Logged in as ${authService.username}` : notLoggedInText;
     })
   }
 
