@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthServiceService {
-  private loggedIn = new BehaviorSubject<boolean>(false);
+  loggedIn = new BehaviorSubject<boolean>(false);
   isLoggedIn$ = this.loggedIn.asObservable();
 
   username = '';
@@ -15,7 +15,7 @@ export class AuthServiceService {
   }
 
   public login(username: string, password: string) {
-    if (username === 'a' && password === 'a') {
+    if (username === password) {
       this.username = username;
       this.loggedIn.next(true);
       this.router.navigateByUrl("/todo-list");
