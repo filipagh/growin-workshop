@@ -7,13 +7,14 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatIconModule} from "@angular/material/icon";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import {EnableForDirective} from "../../../shared/enable-for.directive";
 // Import your icons
 
 
 @Component({
   selector: 'app-todo-item',
   standalone: true,
-  imports: [CommonModule, MatButtonToggleModule, MatIconModule,FontAwesomeModule],
+  imports: [CommonModule, MatButtonToggleModule, MatIconModule, FontAwesomeModule, EnableForDirective],
   templateUrl: './todo-item.component.html',
   styleUrl: './todo-item.component.css'
 })
