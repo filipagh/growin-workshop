@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {AuthServiceService} from "../../services/auth-service.service";
 
+let notLoggedIn = "Not logged in";
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -10,13 +12,14 @@ import {AuthServiceService} from "../../services/auth-service.service";
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  username: string = "";
+  loggedInText: string = notLoggedIn;
+
   constructor(authService: AuthServiceService) {
-    authService.isLoggedIn$.subscribe((isLoggedIn) => {
-      this.username = authService.username;
+    authService.loggedIn$.subscribe((isLoggedIn) => {
+
+      this.loggedInText = isLoggedIn ? `Logged in as ${authService.username}` : notLoggedIn;
     })
   }
-
 
 
 }

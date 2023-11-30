@@ -6,8 +6,7 @@ import {Router} from "@angular/router";
   providedIn: 'root'
 })
 export class AuthServiceService {
-  loggedIn = new BehaviorSubject<boolean>(false);
-  isLoggedIn$ = this.loggedIn.asObservable();
+  loggedIn$ = new BehaviorSubject<boolean>(false);
 
   username = '';
 
@@ -17,9 +16,9 @@ export class AuthServiceService {
   public login(username: string, password: string) {
     if (username === password) {
       this.username = username;
-      this.loggedIn.next(true);
+      this.loggedIn$.next(true);
       this.router.navigateByUrl("/todo-list");
     }
-    this.loggedIn.next(false);
+    this.loggedIn$.next(false);
   }
 }
