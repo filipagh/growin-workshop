@@ -17,8 +17,9 @@ export class AuthServiceService {
     if (username === password) {
       this.username = username;
       this.loggedIn$.next(true);
-      this.router.navigateByUrl("/todo-list");
+      this.router.navigate(['todo-list']);
+    } else {
+      this.loggedIn$.next(false);
     }
-    this.loggedIn$.next(false);
   }
 }
