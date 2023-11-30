@@ -15,6 +15,7 @@ import {MatIconModule} from "@angular/material/icon";
   styleUrl: './todo-item.component.css'
 })
 export class TodoItemComponent {
+  stateEnum = TodoItemStateEnum;
   @Input({required: true}) todo!: TodoItem;
 
   constructor(private todosService: TodosService  ) {
